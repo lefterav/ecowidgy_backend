@@ -1,7 +1,7 @@
 '''
 Created on Nov 17, 2019
 
-@author: lefterav
+@author: Eleftherios Avramidis, Open Source Lab by DFKI
 '''
 
 import requests
@@ -27,6 +27,13 @@ PRODUCT_PROCESS_UUIDS = {'soap': '22f8febd-bc20-31e4-9a6f-c5265e4cd6ce',
                             'telephone':'d46ba771-ea39-3aac-842b-56ab9edc9b98',
                             'milk': '96b4853a-8994-3b03-b0ac-313069b7d951',
     }
+
+# This is not real data, it is by approximation. 
+# @todo Official data need to be placed/fetched here!
+PRODUCER_PRICE = {'soap': 0.1, #1$ per 100g
+                    'telephone': 10.0,
+                    'milk': 1.0, 
+                    }
 
 class Command(BaseCommand):
     help = 'Fetch indicative lifecycle assesment data from an official server and store them in the database'
@@ -72,7 +79,8 @@ class Command(BaseCommand):
     
     
     def _populate_database(self, process_json, product_type):
-        product_type, _ = ProductType.objects.get_or_create(name=product_type)
+        product_type, _ = ProductType.objects.get_or_create(name=product_type,
+                                                            price=PRODUCER_PRICE[product_type])
         for exchange in process_json['exchanges']:
             # get only the output for the moment
             print(exchange)
