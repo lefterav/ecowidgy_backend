@@ -15,9 +15,6 @@ In order to calculate the emissions of a product, we multiple the quantity or th
 
 The back-end includes a database which contains the information about the environmental impact of specific product categories. It also provides a search function for particular products given their name and can perform the calculation of the emissions given a specific amount of the product. A basic web interface is provided, whether there is the possibility of providing a web-service API for supporting the function of browser based widgets. 
 
-### Development framework
-
-The back-end is implemented in Python Django. 
 
 
 ## Installation
@@ -27,18 +24,25 @@ The back-end is implemented in Python Django.
 3. Install django
 4. Download this code
 5. Open a terminal in the root folder of the project and run the following commands:
-```python manage.py migrate
-python manage.py createsuperuser
-python manage.py fetch_data
-```
+
+    python manage.py migrate
+    python manage.py createsuperuser
+    python manage.py fetch_data
+
+
+### Development framework
+
+The back-end is implemented in Python Django. 
 
 
 ## Creators 
 
-Eleftherios Avramidis
-Görkem Cetinkaya
-Alex Han
-Joshua Overbye
-Marc Shakory
+(alphabetically)
+
+* Eleftherios Avramidis
+* Görkem Cetinkaya
+* Alex Han
+* Joshua Overbye
+* Marc Shakory
 
 
