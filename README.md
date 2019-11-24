@@ -28,6 +28,9 @@ The back-end includes a database which contains the information about the enviro
     python manage.py migrate
     python manage.py createsuperuser
     python manage.py fetch_data
+    python manage.py runserver 10000
+    
+6. Point your browser to http://localhost:10000 
 
 
 ### Development framework
